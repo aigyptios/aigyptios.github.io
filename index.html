@@ -3,9 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mike Henry's Work</title>
+  <title>Mike Henry, Front-End Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+
+    body {
+      font-family: 'Inconsolata', monospace;
+      padding: 30px;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    ul, li {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    nav ul {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    nav li {
+      margin: 40px 20px;
+      display: inline-block;
+    }
+
+    a {
+      color: red;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .samples li {
+      margin: 40px 20px;
+    }
+
+  </style>
 </head>
 <body>
-  Hello, World!
+  <base href="" />
+  <main>
+    <h1>
+      Hi, I'm Mike Henry.
+    </h1>
+    <p>
+      I write software, mostly with JavaScript, HTML5, and CSS. 
+    </p>
+    <p>
+      I'm <span id="age">27</span> years old.
+    </p>
+    <p>
+      I've been coding since the age of 11.
+    </p>
+    <p>
+      (That means I've been coding for <span id="experience">16</span> years.) 
+    </p>
+    <p>
+      Professionally for <span id="professional">5</span> of them.
+    </p>
+    <img src="./assets/avataaars.svg" alt="">
+    <nav>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/michael-h-125bb441/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.github.com/aigyptios/" target="_blank" rel="noopener noreferrer">Github</a></li>
+        <li><a href="./assets/henry_resume_2020.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+      </ul>
+    </nav>
+  </main>
+  <script>
+    var ageSpan = document.getElementById( 'age' );
+    var experienceSpan = document.getElementById( 'experience' );
+    var professionalSpan = document.getElementById( 'professional' );
+
+
+    var now = new Date();
+    var may111992 = new Date('11-May-1992');
+    var age = Math.floor(( now - may111992 )/( 1000 * 60 * 60 * 24 * 365 ));
+
+    ageSpan.innerHTML = age;
+    experienceSpan.innerHTML = ( age - 11 );
+    professionalSpan.innerHTML = ( age - 22 );
+  </script>
 </body>
 </html>
