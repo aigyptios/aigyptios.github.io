@@ -13,11 +13,6 @@
       text-align: center;
     }
 
-    img {
-      width: 100%;
-      max-width: 300px;
-    }
-
     ul, li {
       padding: 0;
       list-style-type: none;
@@ -47,12 +42,18 @@
     }
 
     .avataaar {
-      display: inline-block;
       cursor: pointer;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
-    .avataaar:hover .avataar__img--original,
-    .avataaar:not(:hover) .avataar__img--sweater {
+    .avataaar__img--original,
+    .avataaar__img--sweater {
+      width: 100%;
+    }
+
+    .avataaar:hover       .avataaar__img--original,
+    .avataaar:not(:hover) .avataaar__img--sweater {
       display: none;
       visibility: hidden;
       height: 0;
@@ -74,8 +75,8 @@
       I write software, mostly with JavaScript, HTML5, and CSS. 
     </p>
     <div class="avataaar">
-      <img class="avataar__img--original" src="./assets/avataaars.svg" alt="">
-      <img class="avataar__img--sweater" src="./assets/avataaars_sweater.svg" alt="">
+      <img class="avataaar__img--original" src="./assets/avataaars.svg" alt="">
+      <img class="avataaar__img--sweater" src="./assets/avataaars_sweater.svg" alt="">
     </div>
     <nav>
       <ul>
