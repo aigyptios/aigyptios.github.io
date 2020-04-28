@@ -16,7 +16,6 @@
     img {
       width: 100%;
       max-width: 300px;
-      cursor: pointer;
     }
 
     ul, li {
@@ -47,6 +46,23 @@
       margin: 40px 20px;
     }
 
+    .avataaar {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .avataaar:hover .avataar__img--original,
+    .avataaar:not(:hover) .avataar__img--sweater {
+      display: none;
+      visibility: hidden;
+      height: 0;
+      width: 0;
+      position: fixed;
+      left: -1000px;
+      top: -1000px;
+      opacity: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -57,7 +73,10 @@
     <p>
       I write software, mostly with JavaScript, HTML5, and CSS. 
     </p>
-    <img src="./assets/avataaars.svg" alt="">
+    <div class="avataaar">
+      <img class="avataar__img--original" src="./assets/avataaars.svg" alt="">
+      <img class="avataar__img--sweater" src="./assets/avataaars_sweater.svg" alt="">
+    </div>
     <nav>
       <ul>
         <li><a href="https://www.linkedin.com/in/michael-a-henry/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -92,14 +111,6 @@
       ageSpan.innerHTML = age;
       experienceSpan.innerHTML = ( age - 11 );
       professionalSpan.innerHTML = ( age - 22 );
-
-      var img = document.getElementsByTagName('img')[0];
-      img.onclick = handleClick;
-      function handleClick() {
-        this.src = handleClick.on ? './assets/avataaars.svg' :  './assets/avataaars_sweater.svg';
-        handleClick.on = !handleClick.on;
-      }
-      handleClick.on = false;
     })();
   </script>
 </body>
