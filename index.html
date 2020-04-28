@@ -25,11 +25,11 @@
 
     nav ul {
       width: 80%;
-      margin: 0 auto;
+      margin: 40px auto;
     }
 
     nav li {
-      margin: 40px 20px;
+      margin: 10px 20px;
       display: inline-block;
     }
 
@@ -68,13 +68,13 @@
       I'm <span id="age">27</span> years old.
     </p>
     <p>
-      I've been coding since the age of 11.
+      I've been coding websites since the age of 11.
     </p>
     <p>
-      (That means I've been coding for <span id="experience">16</span> years.) 
+      (That's about <span id="experience">16</span> years of coding.) 
     </p>
     <p>
-      Professionally for <span id="professional">5</span> of them.
+      I've spent <span id="professional">5</span> of them building web applications professionally.
     </p>
   </main>
   <script>
@@ -84,12 +84,16 @@
 
 
     var now = new Date();
-    var may111992 = new Date('11-May-1992');
-    var age = Math.floor(( now - may111992 )/( 1000 * 60 * 60 * 24 * 365 ));
+    var birthday = new Date('11-May-1992');
+    var age = Math.floor(( now - birthday )/( 1000 * 60 * 60 * 24 * 365 ));
 
     ageSpan.innerHTML = age;
     experienceSpan.innerHTML = ( age - 11 );
     professionalSpan.innerHTML = ( age - 22 );
+
+    var img = document.getElementsByTagName('img')[0];
+    img.onmouseover = function() { this.src = './assets/avataaars_sweater.svg'; }
+    img.onmouseout = function() { this.src = './assets/avataaars.svg'; }
   </script>
 </body>
 </html>
